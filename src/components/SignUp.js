@@ -1,21 +1,40 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const collectData = async () => {
     console.log(name, email, password);
-    let result = await fetch("http://localhost:5000/register", {
-      mathod: "post",
-      body: JSON.stringify({ name, email, password }),
-      headers: {
-        "content-type": "application/json",
-      },
-    });
-    result = await result.JSON();
-    console.log(result);
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/register",
+        {
+          name,
+          email,
+          password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      const result = response.data;
+
+      console.log(result);
+      localStorage.setItem("user", JSON.stringify(result));
+      if (result) {
+        navigate("/");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (

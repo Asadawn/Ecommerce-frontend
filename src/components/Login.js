@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -64,6 +64,10 @@ const Login = () => {
       <button className="appButton" onClick={handleData}>
         Login
       </button>
+      <hr style={{ marginTop: "20px", marginRight: "720px" }} />
+      <p style={{ marginLeft: "130px", cursor: "pointer" }}>
+        <Link to="/signup"> Create Account</Link>
+      </p>
     </div>
   );
 };

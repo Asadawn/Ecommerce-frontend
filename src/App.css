@@ -1,4 +1,4 @@
-.nav-ul{
+/* .nav-ul{
   padding: 0px;
   margin: 0px;
   background-color: lightskyblue;
@@ -56,7 +56,113 @@ display: inline-block;
 .product-list ul li{
   display: inline-block;
   border: 1px solid skyblue;
-  /* margin: 0px; */
+  
   padding: 5px;
   width: 180px;  
+} */
+
+
+
+/**/
+/* Base styles */
+.nav-ul {
+  padding: 0;
+  margin: 0;
+  background-color: lightskyblue;
+  text-align: center; /* Center the navigation items */
 }
+
+.nav-ul li {
+  display: inline-block;
+  padding: 10px 20px; /* Adjusted padding */
+}
+
+.nav-ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px;
+}
+
+.appButton {
+  margin-top: 2px;
+  margin-left: 25px;
+  padding: 10px ;
+  width: 150px;
+  border: 1px solid;
+  cursor: pointer;
+  background-color: skyblue;
+}
+
+.register,
+.product {
+  text-align: center; /* Center text */
+}
+
+.inputBox {
+  display: block;
+  margin: 10px auto; /* Center horizontally */
+  padding: 7px;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 300px; /* Maximum width */
+  border: 1px solid skyblue;
+}
+
+.invalid {
+  color: red;
+  margin-top: -10px; /* Adjusted margin */
+  display: block;
+  text-align: center; /* Center text */
+}
+
+.footer {
+  text-align: center; /* Center text */
+  width: 100%;
+  background-color: lightskyblue;
+  position: absolute;
+  bottom: 0;
+  padding: 10px 0;
+}
+
+.product-list {
+  text-align: center;
+  margin-top: 20px; /* Adjusted margin */
+}
+
+.product-list ul {
+  list-style: none; /* Remove list bullets */
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Make the list items wrap to the next line on smaller screens */
+  justify-content: center; /* Center items horizontally */
+}
+
+.product-list ul li {
+  display: inline-block;
+  border: 1px solid skyblue;
+  margin: 5px; /* Add space between items */
+  padding: 5px;
+  width: 45%; /* Adjusted width for smaller screens */
+  max-width: 180px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .nav-ul li {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+  .appButton {
+    margin-top: 10px;
+  }
+  .inputBox {
+    margin: 10px auto;
+  }
+  .invalid {
+    margin-top: -10px;
+  }
+  .product-list ul li {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+/* Add more media queries for smaller screens if needed */

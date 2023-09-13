@@ -29,9 +29,59 @@ const ProductList = () => {
     }
   };
 
+  // const searchHandle = async (e) => {
+  //   try {
+  //     let key = e.target.value;
+  //     console.log(key);
+
+  //     const response = await axios.get(`http://localhost:5000/search/${key}`);
+  //     const resultData = response.data;
+  //     console.log(resultData);
+
+  //     if (resultData) {
+  //       setProducts(resultData);
+  //       console.log(setProducts(resultData));
+  //     }
+  //   } catch (error) {
+  //     console.error("An error occurred:", error);
+  //   }
+  // };
+
+  // const searchHandle = async (e) => {
+  //   let key = e.target.value;
+  //   console.log(key);
+  //   const response = await axios.get(`http://localhost:5000/search/${key}`);
+  //   const resultData = response.data;
+  //   console.log(resultData);
+
+  //   if (resultData) {
+  //     setProducts(resultData);
+  //   }
+  // };
+  const searchHandle = async (e) => {
+    let key = e.target.value;
+    console.log(key);
+    if (key) {
+      let result = await fetch(`http://localhost:5000/search/${key}`);
+      result = await result.json();
+      console.log(result);
+      if (result) {
+        setProducts(result);
+      }
+    } else {
+      getProducts();
+    }
+  };
+
   return (
     <div className="product-list">
       <h1>Product List</h1>
+      <input
+        type="text"
+        className="search-product-box"
+        placeholder="Search Product"
+        onChange={searchHandle}
+      />
       <ul>
         <li>
           <b>S.No</b>

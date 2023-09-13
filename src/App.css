@@ -166,3 +166,9 @@ display: inline-block;
 }
 
 /* Add more media queries for smaller screens if needed */
+.search-product-box {
+  padding: 15px;
+  width: 27%;
+  border: 1px solid skyblue;
+  margin: 10px;
+}
